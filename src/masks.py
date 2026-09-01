@@ -10,7 +10,10 @@ def get_mask_card_number(num_card: str) -> str:
     for i in range(0, len(source_string), 4):
         new_list_nums.append(source_string[i : i + 4])
     return " ".join(new_list_nums)
-print(get_mask_card_number("1234567891234567"))
+
+
+# print(get_mask_card_number("1234567891234567"))
+
 
 def get_mask_account(bank_account: str) -> str:
     """Функция которая маскирует номер счета пользователя"""
@@ -25,4 +28,5 @@ def get_mask_account(bank_account: str) -> str:
 
     return bank_account_mask
 
-print(get_mask_account("123456789123456789123456789"))
+
+# print(get_mask_account("123456789123456789123456789"))
