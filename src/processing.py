@@ -8,10 +8,11 @@ def filter_by_state(list_of_dict: list, key_state: str = "EXECUTED") -> list:
     return result_list
 
 
-def sort_by_date(list_of_dict: list, sort_order: bool = True) -> list:
+def sort_by_date(list_of_dict: list, sort_order: bool = False) -> list:
     """Функция принимает список словарей и необязательный параметр, задающий порядок
     сортировки (по умолчанию — убывание) и возвращает новый список, отсортированный по дате"""
-    sorted_list_dict = sorted(list_of_dict, key=lambda item_list: item_list["date"], reverse=sort_order)
+
+    sorted_list_dict = sorted(list_of_dict, key=lambda item_list: item_list["date"], reverse=not sort_order)
     return sorted_list_dict
 
 
