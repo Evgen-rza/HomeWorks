@@ -14,10 +14,10 @@ def get_mask_card_number(num_card: str) -> str:
 
 def get_mask_account(bank_account: str) -> str:
     """Функция которая маскирует номер счета пользователя"""
-    if len(bank_account) >= 6:
+    if bank_account.isdigit() and len(bank_account) >= 6:
         bank_account_mask = bank_account.replace(bank_account[:-4], "**")
 
-    elif len(bank_account) < 6:
+    else:
         bank_account_mask = "Ошибка, некорректный номер счета. Счет должен содержать не менее 6 цифр"
 
     return bank_account_mask

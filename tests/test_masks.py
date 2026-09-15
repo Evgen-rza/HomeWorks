@@ -25,7 +25,7 @@ def my_number_short():
 
 @pytest.fixture
 def my_number_list():
-    return str([1])
+    return "Привет мир"
 
 
 def test_get_mask_card_number(my_number):
