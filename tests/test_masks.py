@@ -1,31 +1,4 @@
-import pytest
-
 from src.masks import get_mask_account, get_mask_card_number
-
-
-@pytest.fixture
-def my_number():
-    return "1234567891234567"
-
-
-@pytest.fixture
-def my_number_long():
-    return "1234567891234567891"
-
-
-@pytest.fixture
-def my_number_empty():
-    return ""
-
-
-@pytest.fixture
-def my_number_short():
-    return "123"
-
-
-@pytest.fixture
-def my_number_list():
-    return "Привет мир"
 
 
 def test_get_mask_card_number(my_number):
