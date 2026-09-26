@@ -15,30 +15,27 @@ def transaction_descriptions(transactions: list) -> Iterator[dict]:
         yield i["description"]
 
 
-#
-#
-# def card_number_generator(start_num: int, stop_num: int):
-#     """Генератор, который выдает номера банковских карт в формате XXXX XXXX XXXX XXXX."""
-#
-#     if start_num < 1 or stop_num < 1: # Проверка на отрицательные числа
-#         raise ValueError("Числа должны быть больше нуля.")
-#
-#     if len(str(start_num)) > 16 or len(str(stop_num)) > 16: # Проверка на длину чисел
-#         raise ValueError("Число не может содержать более 16 цифр.")
-#
-#     if start_num > stop_num: # Проверка правильности ввода чисел
-#         raise ValueError("Некорректно задан диапазон")
-#
-#     for number in range(start_num, stop_num + 1):
-#         numbers = str(number).zfill(16)  #Дополняем строку нулями до 16 символов
-#         format_num = f"{numbers[:4]} {numbers[4:8]} {numbers[8:12]} {numbers[12:]}" #Форматируем строку,
-#         разделяя пробелами по 4 цифры
-#         yield format_num
-#
-#
-# gen = card_number_generator(9999999999999998, 9999999999999999)
-# print(next(gen))
-#
+def card_number_generator(start_num: int, stop_num: int) -> Iterator[str]:
+    """Генератор, который выдает номера банковских карт в формате XXXX XXXX XXXX XXXX."""
+
+    if start_num < 1 or stop_num < 1:  # Проверка на отрицательные числа
+        raise ValueError("Числа должны быть больше нуля.")
+
+    if len(str(start_num)) > 16 or len(str(stop_num)) > 16:  # Проверка на длину чисел
+        raise ValueError("Число не может содержать более 16 цифр.")
+
+    if start_num > stop_num:  # Проверка правильности ввода чисел
+        raise ValueError("Некорректно задан диапазон")
+
+    for number in range(start_num, stop_num + 1):
+        numbers = str(number).zfill(16)  # Дополняем строку нулями до 16 символов
+        # Форматируем строку,разделяя пробелами по 4 цифры
+        format_num = f"{numbers[:4]} {numbers[4:8]} {numbers[8:12]} {numbers[12:]}"
+        yield format_num
+
+
+gen = card_number_generator(1, 9999999999999999)
+print(next(gen))
 
 form = transaction_descriptions(
     [
