@@ -1,0 +1,8 @@
+Функция my_function начала работу
+Ошибка в my_function: can only concatenate str (not "int") to str
+Входные параметры: args=('5', 10), kwargs={}
+Функция my_function начала работу
+Функция my_function выполнена успешно, результат: 33
+Функция my_function начала работу
+Ошибка в my_function: unsupported operand type(s) for +: 'int' and 'str'
+Входные параметры: args=(23, '10'), kwargs={}
