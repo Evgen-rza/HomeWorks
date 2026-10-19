@@ -32,6 +32,7 @@ def log(filename=None):
 
     return wrapper
 
+
 # @log()
 # def my_function(x, y):
 #     return x + y
